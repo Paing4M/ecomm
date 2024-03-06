@@ -292,7 +292,7 @@ const Cart = () => {
 							<span className='float-end'>${totalPrice}</span>
 						</h4>
 						<hr className='bg-black' />
-						{cartItems.length > 0 && (
+						{cartItems?.length > 0 && (
 							<button
 								disabled={loading}
 								onClick={handleCheckout}
