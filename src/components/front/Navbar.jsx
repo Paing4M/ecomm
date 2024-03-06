@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom'
 
 function Navbar() {
 	const { user, token } = useSelector((state) => state.user)
-	const navigate = useNavigate()
+	// const navigate = useNavigate()
 	const dispatch = useDispatch()
 	let renderRightNav
 
@@ -19,7 +19,7 @@ function Navbar() {
 		const res = await axiosInstance.post('/logout')
 		if (res.status === 200) {
 			dispatch(logoutUser())
-			navigate('/login')
+			// navigate('/login')
 		}
 		console.log(res)
 	}

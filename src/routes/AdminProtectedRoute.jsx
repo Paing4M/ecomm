@@ -37,7 +37,7 @@ function AdminProtectedRoute({ component: Component }) {
 					icon: 'warning',
 				})
 
-				navigate('/')
+				navigate('/login')
 			}
 
 			return Promise.reject(err)

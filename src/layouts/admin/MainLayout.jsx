@@ -6,20 +6,8 @@ import '../../assets/admin/css/sb-admin-2.min.css'
 import '../../assets/admin/vendor/fontawesome-free/css/all.min.css'
 import '../../assets/admin/vendor/datatables/dataTables.bootstrap4.min.css'
 import { Outlet } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
-import { axiosInstance } from '../../util/axiosInstance'
 
 function MainLayout() {
-	const dispatch = useDispatch()
-
-	async function logout() {
-		const res = await axiosInstance.post('/logout')
-		if (res.status === 200) {
-			dispatch(logoutUser())
-		}
-		// console.log(res)
-	}
-
 	return (
 		<div id='page-top'>
 			<div id='wrapper'>
