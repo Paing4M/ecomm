@@ -48,17 +48,33 @@ function Navbar() {
 					</Link>
 				</li>
 
+				{user?.type == '1' && (
+					<li className='nav-item'>
+						<Link
+							to={'/admin/dashboard'}
+							style={{ textTransform: 'capitalize' }}
+							className='nav-link mx-2'
+						>
+							Dashboard{' '}
+						</Link>
+					</li>
+				)}
+
 				<li className='nav-item'>
 					<NavLink className={'nav-link mx-2'} to={'/cart'}>
 						<FontAwesomeIcon icon={faCartShopping} />
 					</NavLink>
 				</li>
 
-				<li className='nav-item'>
+				<li className='d-inline-block d-md-none'>
+					<hr class='dropdown-divider' />
+				</li>
+
+				<li className='nav-item bg-primary mt-2 mt-md-0  px-2 ml-2 rounded text-center'>
 					<a
 						onClick={logout}
 						style={{ cursor: 'pointer' }}
-						className='nav-link mx-2'
+						className='nav-link mx-2 text-white'
 					>
 						Logout
 					</a>

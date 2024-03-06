@@ -126,19 +126,19 @@ const Cart = () => {
 	const check = async () => {
 		const sessionId = searchParams.get('session_id')
 		if (sessionId) {
+			setLoading(true)
 			const data = {
 				session_id: sessionId,
 			}
 			const res = await checkSuccessPaymentRequest(data)
 			if (res) {
-				console.log(res)
+				// console.log(res)
 				if (res.status == 404) {
 					Swal.fire({
 						title: res.message,
 						icon: 'warning',
 					})
 				} else {
-					setLoading(true)
 					const res = await deleteCartRequest()
 					if (res.status == 200) {
 						await queryClient.invalidateQueries({

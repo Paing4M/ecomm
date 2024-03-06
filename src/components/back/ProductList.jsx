@@ -38,8 +38,8 @@ const ProductList = ({
 			<td>{categoryName}</td>
 			<td>{brand}</td>
 			<td>{qty}</td>
-			<td>{original_price}</td>
-			<td>{selling_price}</td>
+			<td>${original_price}</td>
+			<td>{selling_price && '$' + selling_price}</td>
 			<td>
 				<button
 					className={`btn btn-sm ${
